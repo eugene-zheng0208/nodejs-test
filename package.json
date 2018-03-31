@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-test",
+  "version": "1.0.0",
+  "description": "This is a node test",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "initDb":"sqlite3 database.sqlite < src/sql/initDatabase.sql",
+    "deleteDb": "rm database.sqlite",
+    "resetDb": "npm run deleteDb && npm run initDb"
+  },
+  "repository": "git@bitbucket.org:lead-web/nodejs-test.git",
+  "author": "Martin Grogan <marting@lead-web.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "restify": "^5.2.0",
+    "sqlite": "^2.8.0"
+  }
+}
